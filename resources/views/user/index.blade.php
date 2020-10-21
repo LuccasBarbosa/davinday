@@ -36,7 +36,7 @@
 
                 @if ($u->name == Auth::user()->name )
 
-                <form action="{{route('user.update',$u->id)}}" method="post">    
+                <form action="{{route('user.update',$u->id)}}" method="post" enctype="multipart/form-data">    
                     @csrf
                     @method('PUT')
 
@@ -143,8 +143,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="picture">Foto</label>
-                        <input type="file" class="form-control-file" id="picture" name="foto">
+                        <label for="image">Foto</label>
+                        <input type="file" class="form-control-file" id="image" name="image">
                     </div>
 
 

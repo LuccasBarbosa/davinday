@@ -55,7 +55,34 @@ class UserController extends Controller
     {
         $user = User::find($id); 
 
+        $data = $request->all();
+
         if (isset($user)) {
+
+            $data['image'] = $request->file('images');
+
+            if($request->hasFile('image') && $request->file('image')->isValid()){
+                if($user->image)
+                    $name = $user->image;
+                else
+                    $name = $user->id.kebab_case($user->name);
+                
+                $extension = $request->image->extension();    
+                $nameFile = "{$name}.{$extension}";
+                $data['image'] = $nameFile;
+
+                $upload = $request->image->storeAs('users', $nameFile);
+       
+
+
+                if(!$upload)
+
+                    return redirect()
+                        ->back()
+                        ->with('error', 'Falha ao atualizar');  
+            }
+
+            $update = $user->update($data);
             
             $user->name = $request->input('nome');
             $user->sobrenome = $request->input('sobrenome');
