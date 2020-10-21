@@ -78,6 +78,24 @@
                     </div>
 
                     <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="numero">Número</label>
+                            <input type="text" class="form-control" id="numero" name="numero" value="{{$u->numero}}">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="complemento">Complemento</label>
+                            <input type="text" class="form-control" id="complemento" name="complemento" value="{{$u->complemento}}">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" class="form-control" id="bairro" name="bairro" value="{{$u->bairro}}">
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCity">Cidade</label>
                             <input type="text" class="form-control" id="inputCity" name="cidade" value="{{$u->cidade}}">
@@ -87,8 +105,34 @@
                             <select id="inputState" class="form-control" name="uf">
                                 
                                 <option selected>{{$u->uf}}</option>
-                                <option>AC</option>
-                                <option>SP</option>
+
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AM">AM</option>
+                                <option value="AP">AP</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MG">MG</option>
+                                <option value="MS">MS</option>
+                                <option value="MT">MT</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="PR">PR</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="RS">RS</option>
+                                <option value="SC">SC</option>
+                                <option value="SE">SE</option>
+                                <option value="SP">SP</option>
+                                <option value="TO">TO</option>
             
                             </select>
                         </div>
@@ -99,7 +143,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="picture">Picture</label>
+                        <label for="picture">Foto</label>
                         <input type="file" class="form-control-file" id="picture" name="foto">
                     </div>
 
