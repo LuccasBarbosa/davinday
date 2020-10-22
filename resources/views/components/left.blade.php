@@ -11,9 +11,13 @@ $user = DB::table('users')->get();
 <div class="col col-md-2 sidebar-left">
 
   <div class="card mb-3">
-     
-      <img src='storage/users/{{ Auth::user()->image }}' class="img-fluid float-left rounded-circle avatar mb-2" alt="">
-      
+
+    @if (Auth::user()->image)
+        <img src='storage/users/{{ Auth::user()->image }}' class="img-fluid float-left rounded-circle avatar mb-2" alt="">
+    @else
+        <img src="https://ustp.st/admin/files/content/570aaa13-ae06-4872-a7c7-926081ccb39a.png" class="img-fluid float-left rounded-circle avatar mb-2" alt=""> 
+    @endif
+           
       <a class="mb-0 nome" href="{{URL::route('user')}}">{{ Auth::user()->name }} {{Auth::user()->sobrenome}}</a>
       <p class="mb-0 cargo">{{Auth::user()->cargo}}</p>
   </div>

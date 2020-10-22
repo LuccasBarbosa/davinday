@@ -80,8 +80,12 @@
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     
-                                     <img src="https://ustp.st/admin/files/content/570aaa13-ae06-4872-a7c7-926081ccb39a.png" class="img-fluid float-left rounded-circle" alt="">
-                                    
+                         
+                                    @if (Auth::user()->image)
+                                        <img src='storage/users/{{ Auth::user()->image }}' class="img-fluid float-left rounded-circle" alt="">
+                                    @else
+                                        <img src="https://ustp.st/admin/files/content/570aaa13-ae06-4872-a7c7-926081ccb39a.png" class="img-fluid float-left rounded-circle" alt=""> 
+                                    @endif
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
